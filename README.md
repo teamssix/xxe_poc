@@ -7,7 +7,7 @@
 
 ## 1、内网主机扫描 inhostscan.py
 ```
-用法：python3 inhostscan.py 漏洞地址 带扫描的IP段
+用法：python3 inhostscan.py 漏洞地址 待扫描的IP段
 示例：python3 inhostscan.py http://192.168.38.132/xxe_test.php 192.168.38
 ```
 
