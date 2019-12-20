@@ -1,5 +1,10 @@
 # xxe_payload
 
+## 使用须知
+
+* 安装 requests 模块```pip3 install requests```
+* 需要 Python3 环境
+
 ## 1、inhostscan.py
 ```
 用法：python3 inhostscan.py 漏洞网址 带扫描的IP段
