@@ -22,7 +22,7 @@ if __name__ == '__main__':
 	headers = {'Content-Type':'application/xml'}
 	try:
 		print('''
-[!] 用法：python3 inhostscan.py 漏洞网址 带扫描的IP段
+[!] 用法：python3 inhostscan.py 漏洞网址 待扫描的IP段
 [!] 示例：python3 inhostscan.py http://192.168.38.132/xxe_test.php 192.168.38
 									''')
 		url = sys.argv[1]
